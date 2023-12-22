@@ -7,9 +7,10 @@ public class CalculatorServiceImpl implements CalculatorService {
     public String answerWelcom(){
         return "<h1> Добро пожаловать в калькулятор!</h1>";
     }
-    public String calculatorSum(int num1,int num2){
 
-        return num1+" + "+ num2+ " = "+ (num1+num2);
+    public int calculatorSum(int num1, int num2) {
+
+        return num1 + num2;
     }
     public String calculatorSubtraction(int num1,int num2){
 
