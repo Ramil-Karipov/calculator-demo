@@ -37,6 +37,6 @@ public class CalculatorController {
     public String calculatorDivide(@RequestParam(required = true) int num1, @RequestParam(required = true) int num2) {
         return num1 + " / " + num2 + " = " + calculatorService.calculatorDivide(num1, num2);
     }
-
 }
+
 
