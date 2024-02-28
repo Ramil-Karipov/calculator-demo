@@ -24,6 +24,21 @@ class ParametrizedCalculatorServiceImplTest {
     @MethodSource("data")
     void plus(int a, int b) {
         int expected = a + b;
-        Assertions.assertEquals(expected, calculatorService.plus(a, b));
+        Assertions.assertEquals(expected, calculatorService.calculatorSum(a, b));
+    }
+
+    void minus(int a, int b) {
+        int expected = a - b;
+        Assertions.assertEquals(expected, calculatorService.calculatorSubtraction(a, b));
+    }
+
+    void divide(int a, int b) {
+        int expected = a / b;
+        Assertions.assertEquals(expected, calculatorService.calculatorDivide(a, b));
+    }
+
+    void multiply(int a, int b) {
+        int expected = a * b;
+        Assertions.assertEquals(expected, calculatorService.calculatorMultiply(a, b));
     }
 }
