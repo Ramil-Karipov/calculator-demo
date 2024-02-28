@@ -2,30 +2,47 @@ package com.calculator.calculatordemo;
 
 
 import org.springframework.stereotype.Service;
+
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-    public String answerWelcom(){
+
+    @Override
+    public String answerWelcom() {
         return "<h1> Добро пожаловать в калькулятор!</h1>";
     }
-    public String calculatorSum(int num1,int num2){
 
-        return num1+" + "+ num2+ " = "+ (num1+num2);
-    }
-    public String calculatorSubtraction(int num1,int num2){
+    @Override
 
-        return num1+" - "+ num2+ " = "+ (num1-num2);
-    }
-    public String calculatorMultiply(int num1,int num2){
+    public int calculatorSum(int num1, int num2) {
 
-        return num1+" * "+ num2+ " = "+ (num1*num2);
+        return num1 + num2;
     }
-    public String calculatorDivide(int num1,int num2){
-        if (num2!=0){
-            return num1+" / "+ num2+ " = "+ (num1/num2);
+
+    @Override
+
+    public int calculatorSubtraction(int num1, int num2) {
+
+        return num1 - num2;
+    }
+
+    @Override
+
+    public int calculatorMultiply(int num1, int num2) {
+
+        return num1 * num2;
+    }
+
+    @Override
+
+    public int calculatorDivide(int num1, int num2) {
+        if (num2 == 0) {
+            throw new DivisionByZeroException("Ошибка: деление на ноль");
         }
-        else{
-            return "Делить на ноль нельзя, измените значение!";
-        }
+        return num1 / num2;
     }
 }
+
+
+
+
 
